@@ -22,9 +22,8 @@ const cursor = ref<HTMLSpanElement>()
 
 const carouselText = [
   { text: 'Friendship.', color: '' },
-  { text: 'Posts.', color: '' },
+  { text: 'Sharing.', color: '' },
   { text: 'Collaboration.', color: '' },
-  { text: 'Information.', color: '' },
   { text: 'Community.', color: '' },
   { text: 'Uncensorability!', color: '' },
 ]
