@@ -10,11 +10,82 @@ import type {
 } from "../TweetController";
 
 const _abi = [
-  "function changeVoteInTweet(uint256,int256)",
-  "function createTweet(string) returns (uint256)",
-  "function ownerAddr() view returns (address)",
-  "function setManagerAddr(address)",
-  "function transferOwnership(address)",
+  {
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "_tweetId",
+        type: "uint256",
+      },
+      {
+        internalType: "int256",
+        name: "changeValue",
+        type: "int256",
+      },
+    ],
+    name: "changeVoteInTweet",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "string",
+        name: "_text",
+        type: "string",
+      },
+    ],
+    name: "createTweet",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "ownerAddr",
+    outputs: [
+      {
+        internalType: "address",
+        name: "",
+        type: "address",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "address",
+        name: "_managerAddr",
+        type: "address",
+      },
+    ],
+    name: "setManagerAddr",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "address",
+        name: "_newOwner",
+        type: "address",
+      },
+    ],
+    name: "transferOwnership",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
 ];
 
 export class TweetController__factory {

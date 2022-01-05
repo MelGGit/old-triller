@@ -1,18 +1,6 @@
 <script setup lang="ts">
 import useTypingEffectWithCarousel from '@/composables/useTypingEffectWithCarousel'
 
-// const test = import.meta.env.VITE_CONTRACT_MANAGER
-
-// const provider = new ethers.providers.Web3Provider(window.ethereum)
-// const signer = provider.getSigner()
-// const contractManagerContract = new ethers.Contract(test, ContractManagerAbi, signer)
-// const test2 = await contractManagerContract.getAddress('UserStorage')
-// console.log('contract:', test2)
-// console.log(contractManagerContract)
-// console.log(signer)
-
-
-
 useHead({
   title: 'triller | Decentral Social Media App',
 });

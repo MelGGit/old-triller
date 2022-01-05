@@ -10,10 +10,84 @@ import type {
 } from "../UserController";
 
 const _abi = [
-  "function createUser(bytes32,bytes32,bytes32,string,string) returns (uint256)",
-  "function ownerAddr() view returns (address)",
-  "function setManagerAddr(address)",
-  "function transferOwnership(address)",
+  {
+    inputs: [
+      {
+        internalType: "bytes32",
+        name: "_username",
+        type: "bytes32",
+      },
+      {
+        internalType: "bytes32",
+        name: "_firstName",
+        type: "bytes32",
+      },
+      {
+        internalType: "bytes32",
+        name: "_lastName",
+        type: "bytes32",
+      },
+      {
+        internalType: "string",
+        name: "_bio",
+        type: "string",
+      },
+      {
+        internalType: "string",
+        name: "_eMail",
+        type: "string",
+      },
+    ],
+    name: "createUser",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "ownerAddr",
+    outputs: [
+      {
+        internalType: "address",
+        name: "",
+        type: "address",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "address",
+        name: "_managerAddr",
+        type: "address",
+      },
+    ],
+    name: "setManagerAddr",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "address",
+        name: "_newOwner",
+        type: "address",
+      },
+    ],
+    name: "transferOwnership",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
 ];
 
 export class UserController__factory {

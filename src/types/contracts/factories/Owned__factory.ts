@@ -7,9 +7,37 @@ import { Provider } from "@ethersproject/providers";
 import type { Owned, OwnedInterface } from "../Owned";
 
 const _abi = [
-  "constructor()",
-  "function ownerAddr() view returns (address)",
-  "function transferOwnership(address)",
+  {
+    inputs: [],
+    stateMutability: "nonpayable",
+    type: "constructor",
+  },
+  {
+    inputs: [],
+    name: "ownerAddr",
+    outputs: [
+      {
+        internalType: "address",
+        name: "",
+        type: "address",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "address",
+        name: "_newOwner",
+        type: "address",
+      },
+    ],
+    name: "transferOwnership",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
 ];
 
 export class Owned__factory {

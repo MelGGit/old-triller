@@ -7,18 +7,223 @@ import { Provider } from "@ethersproject/providers";
 import type { TweetStorage, TweetStorageInterface } from "../TweetStorage";
 
 const _abi = [
-  "function changeVoteInTweet(uint256,int256)",
-  "function controllerAddr() view returns (address)",
-  "function createTweet(uint256,string) returns (uint256)",
-  "function doesTweetExist(uint256) view returns (bool)",
-  "function getNumTweets() view returns (uint256)",
-  "function getTweetIdsFromUser(uint256) view returns (uint256[])",
-  "function ownerAddr() view returns (address)",
-  "function setControllerAddr(address)",
-  "function transferOwnership(address)",
-  "function tweetIds(uint256) view returns (uint256)",
-  "function tweetToVotes(uint256) view returns (int256)",
-  "function tweets(uint256) view returns (uint256, string, uint256, uint256)",
+  {
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "_tweetId",
+        type: "uint256",
+      },
+      {
+        internalType: "int256",
+        name: "changeValue",
+        type: "int256",
+      },
+    ],
+    name: "changeVoteInTweet",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "controllerAddr",
+    outputs: [
+      {
+        internalType: "address",
+        name: "",
+        type: "address",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "_userId",
+        type: "uint256",
+      },
+      {
+        internalType: "string",
+        name: "_text",
+        type: "string",
+      },
+    ],
+    name: "createTweet",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    name: "doesTweetExist",
+    outputs: [
+      {
+        internalType: "bool",
+        name: "",
+        type: "bool",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "getNumTweets",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "_userId",
+        type: "uint256",
+      },
+    ],
+    name: "getTweetIdsFromUser",
+    outputs: [
+      {
+        internalType: "uint256[]",
+        name: "",
+        type: "uint256[]",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [],
+    name: "ownerAddr",
+    outputs: [
+      {
+        internalType: "address",
+        name: "",
+        type: "address",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "address",
+        name: "_controllerAdrr",
+        type: "address",
+      },
+    ],
+    name: "setControllerAddr",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "address",
+        name: "_newOwner",
+        type: "address",
+      },
+    ],
+    name: "transferOwnership",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    name: "tweetIds",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    name: "tweetToVotes",
+    outputs: [
+      {
+        internalType: "int256",
+        name: "",
+        type: "int256",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    name: "tweets",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "id",
+        type: "uint256",
+      },
+      {
+        internalType: "string",
+        name: "text",
+        type: "string",
+      },
+      {
+        internalType: "uint256",
+        name: "userId",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "postedAt",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
 ];
 
 export class TweetStorage__factory {

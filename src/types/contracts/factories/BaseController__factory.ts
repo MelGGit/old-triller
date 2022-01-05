@@ -10,9 +10,45 @@ import type {
 } from "../BaseController";
 
 const _abi = [
-  "function ownerAddr() view returns (address)",
-  "function setManagerAddr(address)",
-  "function transferOwnership(address)",
+  {
+    inputs: [],
+    name: "ownerAddr",
+    outputs: [
+      {
+        internalType: "address",
+        name: "",
+        type: "address",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "address",
+        name: "_managerAddr",
+        type: "address",
+      },
+    ],
+    name: "setManagerAddr",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "address",
+        name: "_newOwner",
+        type: "address",
+      },
+    ],
+    name: "transferOwnership",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
 ];
 
 export class BaseController__factory {
