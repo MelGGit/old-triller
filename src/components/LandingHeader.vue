@@ -4,16 +4,18 @@
 <template>
   <header>
     <nav
-      class="w-full bg-white text-gray-800 dark:bg-gray-800 dark:text-white py-8 px-8 shadow-md dark:shadow-md flex items-center"
+      class="w-full bg-gray-800 text-white py-4 lg:py-8 px-8 shadow-md flex items-center"
     >
       <icon-ph:chat-teardrop-text class="text-5xl" />
       <router-link :to="{ name: 'home' }" class="ml-6">
         <div
-          class="font-bold font-['Roboto'] lg:text-3xl md:text-lg text-md tracking-wide italic"
+          class="font-bold font-['Roboto'] lg:text-5xl text-4xl tracking-wide italic"
         >triller</div>
       </router-link>
       <div class="ml-auto flex items-center h-full">
-        <button class="btn glass mr-6">Sign up / Sign In</button>
+        <button
+          class="btn glass mr-6 hidden lg:block lg:visible"
+        >Sign up / Sign In</button>
         <a
           target="_blank"
           referrerpolicy="no-referrer"

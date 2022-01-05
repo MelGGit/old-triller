@@ -45,7 +45,7 @@ const carousel = async (eleRef: HTMLSpanElement, carouselList: { text: string, c
 
 const useTypingEffectWithCarousel = async (staticEleRef: HTMLSpanElement, dynamicEleRef: HTMLSpanElement, text: string, carouselList: { text: string, color: string }[]) => {
   await typeSentence(text, staticEleRef)
-  carousel(dynamicEleRef, carouselList)
+  await carousel(dynamicEleRef, carouselList)
 }
 
 

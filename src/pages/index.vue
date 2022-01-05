@@ -1,12 +1,24 @@
 <script setup lang="ts">
 import useTypingEffectWithCarousel from '@/composables/useTypingEffectWithCarousel'
-import MetamaskIcon from '@/assets/metamask.svg'
+
+// const test = import.meta.env.VITE_CONTRACT_MANAGER
+
+// const provider = new ethers.providers.Web3Provider(window.ethereum)
+// const signer = provider.getSigner()
+// const contractManagerContract = new ethers.Contract(test, ContractManagerAbi, signer)
+// const test2 = await contractManagerContract.getAddress('UserStorage')
+// console.log('contract:', test2)
+// console.log(contractManagerContract)
+// console.log(signer)
+
+
 
 useHead({
-  title: 'triller | Decentral Social Platform',
+  title: 'triller | Decentral Social Media App',
 });
 const element = ref<HTMLSpanElement>()
 const featureText = ref<HTMLSpanElement>()
+const cursor = ref<HTMLSpanElement>()
 
 const carouselText = [
   { text: 'Friendship.', color: '' },
@@ -17,34 +29,43 @@ const carouselText = [
   { text: 'Uncensorability!', color: '' },
 ]
 
-const defaultText = 'Build for'
+const defaultText = 'Built for'
 
 onMounted(async () => {
   if (!element.value || !featureText.value) return
   await useTypingEffectWithCarousel(element.value, featureText.value, defaultText, carouselText)
+  cursor.value?.classList.remove('input-cursor')
 })
 
 
 </script>
 
 <template>
-  <div class="grid grid-cols-3 mt-20">
-    <div class="col-span-2 flex flex-col">
-      <div class="text-8xl uppercase font-[Roboto] tracking-wide">
-        A
-        <span class="bg-blue-500 px-2">decentral</span> Social Media Platform
+  <div
+    class="grid grid-cols-1 text-center lg:text-left lg:grid-cols-3 mt-4 lg:mt-20 w-full"
+  >
+    <div class="lg:col-span-2 flex flex-col w-full">
+      <div class="text-4xl lg:text-8xl uppercase font-[Roboto] tracking-wide">
+        <div>
+          <span>A</span>
+          <span class="bg-blue-500 px-4 italic">decentral</span>
+        </div>
+        <span>Social Media Platform</span>
       </div>
-      <div class="flex mt-20 italic">
-        <span ref="element" class="sentence font-['Darker_Grotesque'] text-6xl"></span>
+      <div class="flex mt-8 lg:mt-20 italic justify-center lg:justify-start">
+        <span
+          ref="element"
+          class="sentence font-['Darker_Grotesque'] text-3xl lg:text-6xl"
+        ></span>
         <span
           ref="featureText"
-          class="font-['Darker_Grotesque'] text-6xl ml-2 underline decoration-white"
+          class="font-['Darker_Grotesque'] text-3xl lg:text-6xl ml-2 underline decoration-white"
         ></span>
-        <span class="input-cursor"></span>
+        <span ref="cursor" class="input-cursor h-8 lg:h-[3.75rem]"></span>
       </div>
     </div>
     <div
-      class="flex flex-col self-center xl:justify-self-center lg:justify-self-end items-center"
+      class="flex flex-col self-center xl:justify-self-center lg:justify-self-end items-center mt-20 lg:mt-0"
     >
       <button class="btn glass flex">
         <svg
@@ -494,7 +515,7 @@ onMounted(async () => {
 
         <span class="ml-4">Create your Account</span>
       </button>
-      <div class="text-sm text-center mt-4 text-gray-600">
+      <div class="lg:text-sm text-2xs text-center mt-4 text-gray-600">
         <p>MetaMask will automatically open and ask you to confirm a transaction.</p>
         <p>Please note that creating an account on the Ethereum blockchain costs a small amount of Ether.</p>
       </div>
@@ -523,6 +544,16 @@ meta:
     opacity: 0;
   }
 }
+
+.input-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 60px;
+  background-color: white;
+  margin-left: 8px;
+  animation: blink 0.6s linear infinite alternate;
+}
+
 .input-cursor {
   display: inline-block;
   width: 2px;

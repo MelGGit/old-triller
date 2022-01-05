@@ -1,0 +1,14 @@
+[
+  "function changeVoteInTweet(uint256,int256)",
+  "function controllerAddr() view returns (address)",
+  "function createTweet(uint256,string) returns (uint256)",
+  "function doesTweetExist(uint256) view returns (bool)",
+  "function getNumTweets() view returns (uint256)",
+  "function getTweetIdsFromUser(uint256) view returns (uint256[])",
+  "function ownerAddr() view returns (address)",
+  "function setControllerAddr(address)",
+  "function transferOwnership(address)",
+  "function tweetIds(uint256) view returns (uint256)",
+  "function tweetToVotes(uint256) view returns (int256)",
+  "function tweets(uint256) view returns (uint256, string, uint256, uint256)"
+]

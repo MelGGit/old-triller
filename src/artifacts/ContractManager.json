@@ -1,0 +1,7 @@
+[
+  "function deleteAddress(string)",
+  "function getAddress(string) view returns (address)",
+  "function ownerAddr() view returns (address)",
+  "function setAddress(string,address)",
+  "function transferOwnership(address)"
+]

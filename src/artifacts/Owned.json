@@ -1,0 +1,5 @@
+[
+  "constructor()",
+  "function ownerAddr() view returns (address)",
+  "function transferOwnership(address)"
+]

@@ -1,0 +1,6 @@
+[
+  "function controllerAddr() view returns (address)",
+  "function ownerAddr() view returns (address)",
+  "function setControllerAddr(address)",
+  "function transferOwnership(address)"
+]
